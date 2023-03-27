@@ -688,7 +688,7 @@ public class main {
 
     }
     public static void main(String[] args) {
-
+        System.out.println("jsjjsj");
        dangNhap();
         Scanner in = new Scanner(System.in);
         int option = -1;
