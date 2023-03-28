@@ -23,7 +23,7 @@ public class main {
     {
         Scanner khoiTao=new Scanner(System.in);
         int dem=3;
-        System.out.println("--------Phần mền quản lý nhân viên công ty ABC------- ");
+        System.out.println("\n--------Phần mền quản lý nhân viên công ty ABC------- ");
         while (dem>0)
         {
             System.out.print("Nhập tài khoản:");
@@ -193,6 +193,8 @@ public class main {
         System.out.println("| 4.Thêm nhân viên vào phòng ban/ xoá nhân viên khỏi phòng ban.              |");
         System.out.println("| 5.Chuyển phòng ban cho một nhân viên.                                      |");
         System.out.println("| 6.Tính thuế thu nhập cá nhân cho một nhân viên bất kì.                     |");
+        System.out.println("| 7.Hiển thị tất cả nhân viên trong công ty.                                 |");
+        System.out.println("| 8.Hiển thị tất cả các bộ phận trong công ty.                               |");
         System.out.println("| 0.Thoát.                                                                   |");
         System.out.println(" ____________________________________________________________________________\n\n");
     }
@@ -604,7 +606,7 @@ public class main {
         String idNV=khoiTao.nextLine();
         e=employeesDAO.getById(idNV);
         long luong=23000*e.getSalary();
-        System.out.println("Thông tin lương trước thuế của nhân viên "+e.getEmployees_name() +"là:" + luong+ " VND");
+        System.out.println("Thông tin lương trước thuế của nhân viên "+e.getEmployees_name() +" là:" + luong+ " VND");
         luachon=0;
         long luongTinhThue=luong-11000000;
         if(luongTinhThue<=0)
@@ -688,7 +690,7 @@ public class main {
 
     }
     public static void main(String[] args) {
-        System.out.println("jsjjsj");
+//showAllDepartment();
        dangNhap();
         Scanner in = new Scanner(System.in);
         int option = -1;
@@ -705,7 +707,7 @@ public class main {
                 System.out.println("Bạn đã nhập ký tự vui lòng lựa chọn số trên menu.");
             }
 
-            if (option < 0 || option > 6) {
+            if (option < 0 || option > 8) {
                 System.out.println("Chỉ nhập các lựa chọn có trong menu. Mời bạn nhập lại.\n");
                 continue;
             }
@@ -727,6 +729,12 @@ public class main {
                     break;
                 case 6:
                     tinhThueThuNhapCaNhan();
+                    break;
+                case 7:
+                    showAll();
+                    break;
+                case 8:
+                    showAllDepartment();
                     break;
             }
 
